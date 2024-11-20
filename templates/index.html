@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Her Navigator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="{{ url_for('static', filename='photo_video/w bg2.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+
+    <header>
+        <div class="logo">
+            <img src="static/photo_video/logo.png" alt="Her Navigator Logo">
+            <h1>Her Navigator</h1>
+        </div>
+       <a href="{{ url_for('login_page') }}">
+    <button class="login-btn">Log In</button>
+</a>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h2>Welcome to</h2>
+            <h1>Woman's Realm</h1>
+            <p>Your vision, our expertise. A website just for you.</p>
+        </section>
+    </main>
+</body>
+
+</html>

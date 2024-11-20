@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/signin_style.css') }}">
+</head>
+<body>
+    <div class="Signin-container">
+        <div class="Signin-box">
+            <div class="logo">
+                <img src="static/photo_video/lg.png" alt="User Avatar">
+            </div>
+            <h2>Create New Account</h2>
+            <form id="signupForm">
+                <input type="text" id="name" placeholder="Enter Name" required>
+                <input type="text" id="mobile" placeholder="Enter Mobile No" required>
+                <input type="email" id="email" placeholder="Enter Email" required>
+                
+                <!-- Password Field with Toggle -->
+                <div class="password-container">
+                    <input id="password" type="password" placeholder="Enter Password" required>
+                    <span id="togglePassword" class="toggle-password">👁️</span>
+                </div>
+                
+                <!-- Confirm Password Field with Toggle -->
+                <div class="password-container">
+                    <input id="confirmPassword" type="password" placeholder="Confirm Password" required>
+                </div>
+
+                <button type="submit" class="Signin-btn">Sign Up</button>
+                <p id="error-message" style="color:red; display:none;"></p>
+            </form>
+        </div>
+    </div>
+    <script  src="{{ url_for('static', filename='signin_page.js') }}"></script>
+</body>
+</html>

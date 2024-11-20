@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Tips</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fashion_tips.css') }}">
+</head>
+<body>
+    <div class="container">  
+        <section id="self-care-2">
+            <div class="features">
+                <div class="feature-item">
+                  <a href="##">
+                    <img src="static/photo_video/f.png" alt="Loading animation">
+                     </a>
+                    <h2>Color Match</h2>
+                    <p>desc</p>
+                </div>
+                <div class="feature-item">
+                  <a href="{{ url_for('occasion_wise_outfit_t') }}">
+                    <img src="static/photo_video/s.jpg" alt="Loading animation">
+                     </a>
+                    <h2>Occasion Wise outfit </h2>
+                    <p>desc</p>
+                </div>
+                <div class="feature-item">
+                  <a href="{{ url_for('fasion_tips_with_skin_tone_photo_o') }}">
+                  <img src="static/photo_video/t.png" alt="Loading animation">
+                   </a>
+                  <h2>Skin Tone Wise Outfit</h2>
+                  <p>desc</p>
+
+              </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

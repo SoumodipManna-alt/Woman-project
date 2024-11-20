@@ -1,0 +1,128 @@
+from prompt import constant
+import generativeai, generativeai_for_photo
+from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS, cross_origin
+import os
+from werkzeug.utils import secure_filename
+from PIL import Image  
+import uuid
+
+app = Flask(__name__)
+
+CORS(app, resources={r"/*": {"origins": "*"}})
+
+# Set the folder to store uploaded files
+app.config['UPLOAD_FOLDER'] = 'uploads'
+
+@app.route('/')
+def index():
+    # return render_template('fasion_tips_with_skin_tone_photo.html')
+    #  return render_template('low_your_periodpain.html')
+    #  return render_template('pregnency_tracker.html')
+     return render_template('skin_care.html')
+
+@app.route('/low_your_period_pain', methods=['POST'])
+def low_your_period_pain():
+    data = request.get_json()  
+    symptoms = data.get('symptoms')  
+    if symptoms:
+        try:
+            prompt = constant.prompt_for_low_your_period_pain + symptoms
+            answer = generativeai.callingai(prompt)  
+            return jsonify({'Excercises': answer})  
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500  
+    return jsonify({'error': 'Invalid symptoms'}), 400
+
+@app.route('/pregnency_tracker', methods=['POST'])
+def pregnency_tracker():
+    data = request.get_json()  
+    month = data.get('month')
+    if month:
+        try:
+            prompt = constant.prompt_for_pragnency_traker.format(month=month)
+            answer = generativeai.pregnency_traker(prompt)  
+            return jsonify({'tips': answer})  
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500  
+    return jsonify({'error': 'Invalid symptoms'}), 400
+
+@app.route('/fasion_tips_with_skin_tone_photo', methods=['POST'])
+@cross_origin(supports_credentials=True)
+def fasion_tips_with_skin_tone_photo():
+    if 'image' not in request.files:
+        return jsonify({"message": "No image uploaded"}), 400
+
+    file = request.files['image']
+    if file.filename == '':
+        return jsonify({"message": "No selected file"}), 400
+
+    # Generate a unique filename
+    filename = f"{uuid.uuid4()}_{secure_filename(file.filename)}"
+    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    
+    # Ensure the upload directory exists
+    if not os.path.exists(app.config['UPLOAD_FOLDER']):
+        os.makedirs(app.config['UPLOAD_FOLDER'])
+
+    # Save the file to the server
+    file.save(file_path)
+
+    # Call your AI function with the uploaded image
+    prompt = constant.prompt_for_fashion_with_photo
+    ai_response = generativeai_for_photo.generate_ai_response(prompt, file_path)
+
+    return jsonify({"message": "Image uploaded successfully", "ai_response": ai_response})
+
+@app.route('/hair_care', methods=['POST'])
+@cross_origin(supports_credentials=True)
+def hair_care():
+    data = request.get_json()
+    hair_type = data.get('hair_type')
+    weather = data.get('weather')
+    
+    if hair_type or weather:
+        try:
+            prompt = constant.prompt_for_hair_care.format(hair_type=hair_type, weather=weather)
+            answer = generativeai.callingai(prompt)  
+            return jsonify({'tips': answer})  
+        except Exception as e:
+            return jsonify({'error': str(e)}), 500  
+    return jsonify({'error': 'Invalid symptoms'}), 400
+
+@app.route('/skin_care', methods=['POST'])
+@cross_origin(supports_credentials=True)
+def skin_care():
+    if 'image' not in request.files:
+        return jsonify({"message": "No image uploaded"}), 400
+
+    file = request.files['image']
+    prompt = request.form.get('prompt')
+    skin = request.form.get('skin')
+
+    if file.filename == '':
+        return jsonify({"message": "No selected file"}), 400
+
+    # Generate a unique filename
+    filename = f"{uuid.uuid4()}_{secure_filename(file.filename)}"
+    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    
+    # Ensure the upload directory exists
+    if not os.path.exists(app.config['UPLOAD_FOLDER']):
+        os.makedirs(app.config['UPLOAD_FOLDER'])
+
+    # Save the file to the server
+    file.save(file_path)
+    
+    # Process the prompt and skin data as needed
+    # Example response (customize this as needed)
+    response_data = {
+        "message": "File uploaded successfully",
+        "file_path": file_path,  # Optional, don't expose paths in production
+        "tips": f"Based on your prompt '{prompt}' and skin type '{skin}', here are some tips..."
+    }
+    
+    return jsonify(response_data)
+
+if __name__ == '__main__':
+    app.run(debug=True)

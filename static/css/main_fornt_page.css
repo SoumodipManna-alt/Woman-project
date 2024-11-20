@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+/* fonts */
+@font-face {
+    font-family: 'Roca-Font';
+    src: url('static/otf/fonnts.com-Roca-Light.otf') format('truetype');
+}
+
+body {
+    background: linear-gradient(135deg, #f8c8dc, #f5a1a7);
+    color: #000;
+    text-align: center;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* h1 {
+    font-size: 36px;
+    color: #C94092;
+    margin-bottom: 40px;
+    font-family: 'Roca-Font', cursive;
+} */
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    text-align: center;
+}
+
+.feature-item img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.add img{
+    border-radius: 25%;
+    width: 200px;
+}
+.feature-item h2 {
+    font-size: 20px;
+    color: #C94092;
+    margin-bottom: 10px;
+    font-family: 'Roca-Font', cursive;
+}
+
+.feature-item p {
+    color: #004b4b;
+    font-size: 16px;
+}
+
+.page-btn{
+    border: none;
+    background: none;
+    cursor: pointer;
+}

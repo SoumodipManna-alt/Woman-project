@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin care Tips</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fashion_tips.css') }}">
+</head>
+<body>
+    <div class="container">  
+        <section id="self-care-2">
+            <div class="features">
+                <div class="feature-item">
+                  <a href="{{ url_for('glow_skin_n') }}">
+                    <img src="static/photo_video/t.png" alt="Loading animation">
+                     
+                    <h2>How to glow your skin</h2>
+                    <p>desc</p>
+                    </a>
+                </div>
+                <div class="feature-item">
+                  <a href="{{ url_for('pimple_remove_e') }}">
+                    <img src="static/photo_video/self-care.gif" alt="Loading animation">
+                     
+                    <h2>Reduce your pimple</h2>
+                    <p>desc</p>
+                    </a>
+                </div>
+                <div class="feature-item">
+                  <a href="{{ url_for('skin_care_e') }}">
+                  <img src="static/photo_video/t.png" alt="Loading animation">
+                   
+                  <h2>skin care</h2>
+                  <p>desc</p>
+                  </a>
+              </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

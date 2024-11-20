@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Safety</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/your_safty.css') }}">
+</head>
+<body>
+    <div class="container">
+        <img src="static/photo_video/your-safety.gif" alt="Loading animation">
+        <input type="text" class="input-field" id="phoneInput" placeholder="Enter your parent email.">
+        <button class="add-contact" id="addContactBtn">Add Contact</button>
+        <div> 
+    
+    <p id="location"></p>
+      </div>
+        <section class="contact-list" id="contactList">
+            <!-- Contacts will be dynamically added here -->
+        </section>
+
+        <button id="need_help">Need Help</button>
+    </div>
+    <script src="{{ url_for('static', filename='your_safty.js') }}"></script>
+</body>
+</html>

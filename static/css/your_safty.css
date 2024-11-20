@@ -1,0 +1,96 @@
+body {
+    background-color: #f2b6d3;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.container img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    width: 94%;
+    padding: 11px;
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    background-color: #f2b6d3;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.add-contact {
+    background-color: #ff5ca3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-contact:hover {
+    background-color: #ff3380;
+}
+
+.contact-list {
+    background-color: #f5e6f0;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.contact-item input[type="radio"] {
+    margin-right: 10px;
+}
+
+.remove-btn {
+    background-color: #ff5ca3;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #ff3380;
+}
+
+.need-help {
+    background-color: #ff5ca3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.need-help:hover {
+    background-color: #ff3380;
+}

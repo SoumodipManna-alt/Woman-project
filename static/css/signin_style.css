@@ -1,0 +1,171 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fonts */
+@font-face {
+    font-family: 'Magnolia Script';
+    src: url('static/otf/Magnolia Script.otf') format('truetype');
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f8d4ff, #c4eff7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: fadeInBackground 1s ease-out;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container and Box Styles */
+.Signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.Signin-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInSlideDown 1s ease forwards;
+}
+
+/* Logo Animation */
+.logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInScale 1.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Heading Animation */
+h2 {
+    color: #ff80a0;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: 'Magnolia Script', cursive;
+    opacity: 0;
+    animation: fadeInSlideDown 1s ease forwards;
+    animation-delay: 1s;
+}
+
+/* Form Input Animations */
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    opacity: 0;
+    animation: fadeInSlideUp 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+/* Sign Up Button */
+.Signin-btn {
+    background-color: #ff3399;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInSlideUp 1s ease forwards;
+    animation-delay: 1.4s;
+}
+
+/* Social Login Buttons */
+.social-login {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    opacity: 0;
+    animation: fadeInSlideUp 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.password-container {
+    position: relative;
+}
+
+#password {
+    width: 100%;
+    padding-right: 30px; /* Add space for the toggle button */
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
