@@ -11,7 +11,7 @@ from PIL import Image  # Added for image processing
 
 
 def generate_ai_response(prompt, image_path):
-    os.environ['GOOGLE_API_KEY'] = "AIzaSyBRcheUk41qwLVjgrzvYPepUyE3QY9aSGQ"  # Replace with your actual API key
+    os.environ['GOOGLE_API_KEY'] = "***"  # Replace with your actual API key
     genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
     model = genai.GenerativeModel('gemini-1.5-flash-8b')
 

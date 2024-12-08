@@ -7,8 +7,8 @@ from PIL import Image  # Added for image processing
 
 
 def generate_ai_response(prompt):
-    os.environ['GOOGLE_API_KEY'] = "AIzaSyBRcheUk41qwLVjgrzvYPepUyE3QY9aSGQ"
-    genai.configure(api_key="AIzaSyBRcheUk41qwLVjgrzvYPepUyE3QY9aSGQ")
+    os.environ['GOOGLE_API_KEY'] = "***"
+    genai.configure(api_key="***")
     # genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
     model = genai.GenerativeModel('gemini-pro')
     response = model.generate_content(prompt)
