@@ -83,10 +83,32 @@ event:{event}
 
 '''
 
-prompt_for_pimple_remove='''you act as skin doctor and recognize the face tone and pimple and suggest how to remove pimple'''
+prompt_for_pimple_remove=''' Analyze the skin condition visible in the provided image and provide practical, over-the-counter 
+recommendations for reducing pimples. 
+ Please include:
+ 1. A detailed skincare routine with specific product types for morning and evening (e.g., gentle 
+cleansers, acne treatments, moisturizers, sunscreen) tailored to acne-prone skin.
+ 2. Suggested active ingredients (like salicylic acid, benzoyl peroxide, niacinamide) that can help 
+reduce pimples and inflammation.
+ 3. Lifestyle and dietary suggestions, such as foods to avoid or consume, and habits that can 
+promote clearer skin.
+ Avoid suggesting consulting a dermatologist, and instead focus on practical steps that the user can 
+try independently.
+ Offer advice specific to the visible skin condition in the image without mentioning the need for 
+medical consultation.'''
 
 
-prompt_for_glow_skin='''suggest how to glow the skin provided image recognize face'''
+prompt_for_glow_skin='''Analyze the skin condition visible in the provided image and provide practical, over-the-counter 
+recommendations for achieving a natural glow. 
+ Please include:
+ 1. A detailed skincare routine with specific product types for morning and evening (e.g., gentle 
+cleansers, hydrating serums, moisturizers, sunscreen) tailored to enhance skin radiance.
+ 2. Suggested active ingredients (like vitamin C, hyaluronic acid, niacinamide) that can improve skin 
+texture, hydration, and brightness.
+ 3. Lifestyle and dietary suggestions, such as foods that promote healthy skin and habits that can 
+enhance a natural glow.
+ Focus on practical steps the user can try independently, specific to the visible skin condition in the 
+image, without mentioning the need for medical consultation.'''
 
 
 
@@ -120,7 +142,7 @@ should have:
  '''
 
 prompt_for_Exercise_fitness='''
-Based on my height of $height feet, weight of $weight kg, age of $age years, and gender female, 
+Based on my height of $height (feet), weight of $weight kg, age of $age years, and gender female, 
  create a personalized one-month exercise plan. 
  The plan should include daily exercises split into morning and evening sessions. Each exercise 
 should specify the type of exercise, duration, intensity, and target muscle groups or fitness goals 

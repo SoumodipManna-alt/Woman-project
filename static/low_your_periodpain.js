@@ -1,6 +1,7 @@
 let input = document.getElementById("symtoms");
-let button = document.getElementById("button");
+let button = document.querySelector(".button");
 let response = document.getElementById("answer");
+const spinner = document.getElementById('loadingSpinner');
 
 function convertAdviceToText(input) {
     // Step 1: Clean up the input by replacing special characters and adjusting formatting
@@ -17,8 +18,10 @@ button.addEventListener('click', () => {
     const symptomsData = {
         symptoms: input.value
     };
-    console.log(symptomsData.symptoms);
-    
+    // console.log(symptomsData.symptoms);
+    button.disabled=true
+    spinner.style.display = 'block';
+    // messageDiv.innerText = ''; 
     fetch('http://localhost:5000/low_your_period_pain', {
         method: 'POST',
         headers: {
@@ -30,12 +33,14 @@ button.addEventListener('click', () => {
     .then(data => {
         // Get advice and format it
         let advise = data.Excercises;  // Already in text format, no need for JSON.stringify
-        console.log(advise);
+        // console.log(advise);
        
         let advise1 = convertAdviceToText(advise);
-        console.log(advise1);
+        // console.log(advise1);
        
         response.innerText = advise;  // Display the formatted text
+        spinner.style.display = 'none';
+        button.disabled=false
     })
     .catch((error) => {
         console.error('Error:', error);

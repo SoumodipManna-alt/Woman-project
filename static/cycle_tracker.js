@@ -1,7 +1,10 @@
-console.log("hi")
+// console.log("hi")
+const spinner = document.getElementById('loadingSpinner');
 document.getElementById('button').addEventListener('click',()=>{
 const formData = new FormData();
 formData.append('date',document.getElementById('inputdata').value)
+button.disabled=true
+    spinner.style.display = 'block';
 const url='/cycle_traker'
 fetch('/cycle_traker',{
      method: 'POST',
@@ -18,6 +21,8 @@ fetch('/cycle_traker',{
    // spinner.style.display = 'none';
     // Display the result
     answer.innerText = data.message;
+    spinner.style.display = 'none';
+    button.disabled=false
 })
 .catch(error => {
     // Hide the spinner if an error occurs

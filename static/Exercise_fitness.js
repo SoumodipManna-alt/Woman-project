@@ -4,6 +4,7 @@ let age=document.getElementById("age")
 let button=document.getElementById("button")
 
 let answer=document.getElementById("answer")
+const spinner = document.getElementById('loadingSpinner');
 
 
 
@@ -12,7 +13,8 @@ button.addEventListener('click',()=>{
 formdata.append('height',height.value)
 formdata.append('weight',weigth.value)
 formdata.append('age',age.value)
-
+button.disabled=true
+spinner.style.display = 'block';
     url='/Exercise_fitness'
     fetch(url,{
         method:'POST',
@@ -26,6 +28,8 @@ formdata.append('age',age.value)
     })
     .then(data=>{
         answer.innerText=data.message
+        spinner.style.display = 'none';
+    button.disabled=false
     })
     .catch(error => {
         // Hide the spinner if an error occurs
