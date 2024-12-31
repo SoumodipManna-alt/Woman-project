@@ -10,15 +10,20 @@
         <title>Cycle Tracker</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/common_page.css') }}">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <input type="date" placeholder="Enter your last date" id="inputdata">
+        <h1>"A woman's body is a miraculous thing"</h1>
+       <label for="inputdata">Enter your last date :</label>
+<input type="date" id="inputdata">
         <button id="button">generate</button>
-        <p id="answer"></p>
+        <div class="spinner" id="loadingSpinner"></div>
+        <div>
+        <p id="answer">Answer</p>
+        </div>
         <script 
       src="{{ url_for('static', filename='cycle_tracker.js') }}">
         </script>

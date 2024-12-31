@@ -6,12 +6,21 @@
         <title>Lowyourperiodpain</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/common_page.css') }}">
+
     </head>
     <body>
+   <h1>"Hey sister don't worry shear your filings"</h1>
         <input id="symtoms" placeholder="write symptoms">
-        <button id="button">clickme</button>
-        <div id="answer">
         
+<button  class="button" style="--clr: #7808d0">
+ 
+ Generate Answer
+</button>
+ <div class="spinner" id="loadingSpinner"></div>
+        <div >
+        <p id="answer">
+        Answer!!!!</p>
         </div>
         <!-- Correct JS path for Flask static folder -->
         <script src="{{ url_for('static', filename='low_your_periodpain.js') }}"></script>

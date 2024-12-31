@@ -10,17 +10,21 @@
         <title>Diet plan</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/common_page.css') }}">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <input type="number" placeholder="Enter your height e,g.,5.2" id="height">
-        <input type="number" placeholder="Enter your weigth e,g.,60" id ="weight">
-        <input type="number" placeholder="Enter your age e,g.,21" id="age">
-        <button id="button"> Generating </button>
-        <p id="answer"></p>
+       <h1>"Stay active , Stay healthy"</h1>
+        <input id="height" type="number" placeholder="Enter your height e,g.,5.2">
+        <input id="weight" type="number" placeholder="Enter your weigth e,g.,60">
+        <input id="age"  type="number" placeholder="Enter your age e,g.,21">
+        <button id="button"> Generating Answer</button>
+        <div class="spinner" id="loadingSpinner"></div>
+        <div>
+        <p id="answer">Answer!!!</p>
+        </div>
         <script src="{{ url_for('static', filename='diet_plan.js') }}"></script>
     </body>
 </html>
